@@ -1,4 +1,4 @@
-package it.epicode.archivio;
+package it.epicode.exceptions;
 
 public class CustomException extends RuntimeException {
     public CustomException(String message) {

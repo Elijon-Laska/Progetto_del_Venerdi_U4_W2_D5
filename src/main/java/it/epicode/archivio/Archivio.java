@@ -4,7 +4,8 @@ package it.epicode.archivio;
 import it.epicode.catalogoBibliografico.ElementoCatalogo;
 import it.epicode.catalogoBibliografico.Libro;
 import it.epicode.catalogoBibliografico.Rivista;
-import it.epicode.catalogoBibliografico.enums.Periodicita;
+import it.epicode.enums1.Periodicita;
+import it.epicode.exceptions.CustomException;
 
 import java.util.*;
 import java.util.stream.*;
@@ -13,11 +14,17 @@ public class Archivio {
     private Map<String, ElementoCatalogo> catalogo = new HashMap<>();
 
     public void caricaEsempi() {
-        catalogo.put("12345", new Libro("12345", "Il Signore degli Anelli", 1954, 1200, "J.R.R. Tolkien", "Fantasy"));
-        catalogo.put("67890", new Rivista("67890", "National Geographic", 2025, 100, Periodicita.MENSILE));
-        catalogo.put("54321", new Libro("54321", "1984", 1949, 328, "George Orwell", "Fantascienza"));
-        catalogo.put("98765", new Rivista("98765", "Time", 2023, 80, Periodicita.SETTIMANALE));
     }
+
+    public Archivio() {
+        
+        CaricaEsempi.caricaEsempi(catalogo);
+    }
+
+    public Map<String, ElementoCatalogo> getCatalogo() {
+        return catalogo;
+    }
+
 
     public void aggiungiElemento(ElementoCatalogo elemento) throws CustomException {
         if (catalogo.containsKey(elemento.getCodiceIsbn())) {
@@ -77,4 +84,5 @@ public class Archivio {
         System.out.println("Elemento con maggior numero di pagine: " + (elementoMaxPagine != null ? elementoMaxPagine : "Nessuno"));
         System.out.println("Media delle pagine: " + mediaPagine);
     }
+
 }

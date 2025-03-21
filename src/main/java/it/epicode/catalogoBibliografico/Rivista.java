@@ -1,6 +1,6 @@
 package it.epicode.catalogoBibliografico;
 
-import it.epicode.catalogoBibliografico.enums.Periodicita;
+import it.epicode.enums1.Periodicita;
 
 public class Rivista extends ElementoCatalogo {
     private Periodicita periodicita;

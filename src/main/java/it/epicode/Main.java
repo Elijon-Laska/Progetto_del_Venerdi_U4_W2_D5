@@ -1,11 +1,11 @@
 package it.epicode;
 
 import it.epicode.archivio.Archivio;
-import it.epicode.archivio.CustomException;
+import it.epicode.exceptions.CustomException;
 import it.epicode.catalogoBibliografico.ElementoCatalogo;
 import it.epicode.catalogoBibliografico.Libro;
 import it.epicode.catalogoBibliografico.Rivista;
-import it.epicode.catalogoBibliografico.enums.Periodicita;
+import it.epicode.enums1.Periodicita;
 
 import java.util.List;
 import java.util.Scanner;
